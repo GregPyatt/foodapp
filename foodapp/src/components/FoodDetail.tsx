@@ -1,36 +1,10 @@
 import styles from "./fooddetail.module.css";
 import { useEffect, useState } from "react";
-
-interface food {
-  id: number;
-  title: string;
-  image: string;
-  readyInMinutes: number;
-  servings: number;
-  vegetarian: boolean;
-  vegan: boolean;
-  pricePerServing: number;
-  analyzedInstructions: analyzedInstruction[];
-  extendedIngredients: item[];
-  // Add other properties as needed
-}
-
-interface analyzedInstruction {
-  name: string;
-  steps: step[];
-}
-
-interface step {
-  number: number;
-  step: string;
-}
-
-interface item {
-  name: string;
-  image: string;
-  amount: number;
-  unit: string;
-}
+import ItemList from "./ItemList";
+import { food } from "./interfaces";
+import { analyzedInstruction } from "./interfaces";
+import { item } from "./interfaces";
+import { step } from "./interfaces";
 
 export default function FoodDetail({ foodId }: { foodId: string }) {
   const [food, setFood] = useState({} as food);
@@ -82,25 +56,7 @@ export default function FoodDetail({ foodId }: { foodId: string }) {
         </div>
         <div>
           <h2>Ingredients</h2>
-          {isLoading ? (
-            <p>Loading...</p>
-          ) : (
-            food.extendedIngredients.map((item) => (
-              <div>
-                <img
-                  src={
-                    `https://spoonacular.com/cdn/ingredients_100x100/` +
-                    item.image
-                  }
-                  alt=""
-                />
-                <h3>{item.name}</h3>
-                <h3>
-                  {item.amount} {item.unit}
-                </h3>
-              </div>
-            ))
-          )}
+          <ItemList food={food} isLoading={isLoading} />
 
           <h2>Instructions</h2>
           <div className={styles.recipeInstructions}>

@@ -14,8 +14,6 @@ export default function Search({
 }) {
   const [query, setQuery] = useState<string>("pizza");
 
-  console.log("Here is the API_KEY: " + API_KEY);
-
   useEffect(() => {
     async function fetchFood() {
       try {

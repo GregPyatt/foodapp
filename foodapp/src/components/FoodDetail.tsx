@@ -5,15 +5,12 @@ import { food } from "./interfaces";
 import { analyzedInstruction } from "./interfaces";
 import { item } from "./interfaces";
 import { step } from "./interfaces";
-import React from "react";
 
 export default function FoodDetail({ foodId }: { foodId: string }) {
   const [food, setFood] = useState({} as food);
   const [isLoading, setIsLoading] = useState(true);
   const URL = `https://api.spoonacular.com/recipes/${foodId}/information`;
-  //const API_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY;
   const API_KEY = import.meta.env.VITE_APP_SPOONACULAR_API_KEY;
-  //const API_KEY = "8e867d619b09432882c889481103f195";
 
   useEffect(() => {
     async function fetchFood() {

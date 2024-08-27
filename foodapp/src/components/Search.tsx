@@ -3,7 +3,7 @@ import styles from "./Search.module.css";
 import { Recipe } from "./interfaces";
 
 const URL = "https://api.spoonacular.com/recipes/complexSearch";
-
+const API_KEY = import.meta.env.VITE_APP_SPOONACULAR_API_KEY;
 
 export default function Search({
   foodData,
@@ -13,6 +13,8 @@ export default function Search({
   setFoodData: (data: Recipe[]) => void;
 }) {
   const [query, setQuery] = useState<string>("pizza");
+
+  console.log("Here is the API_KEY: " + API_KEY);
 
   useEffect(() => {
     async function fetchFood() {

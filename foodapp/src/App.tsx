@@ -10,7 +10,7 @@ import FoodDetail from "./components/FoodDetail";
 
 function App() {
   const [foodData, setFoodData] = useState<Recipe[] | null>(null); // Assuming an array of recipes
-  const [foodId, setFoodId] = useState<string>("658615");
+  const [foodId, setFoodId] = useState<number>(658615); //changed from string to number
 
   return (
     <div className="App">

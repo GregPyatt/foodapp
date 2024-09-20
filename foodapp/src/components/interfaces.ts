@@ -2,6 +2,13 @@ export interface Recipe {
   id: number;
   title: string;
   image: string;
+  readyInMinutes: number;
+  servings: number;
+  vegetarian: boolean;
+  vegan: boolean;
+  pricePerServing: number;
+  analyzedInstructions: analyzedInstruction[];
+  extendedIngredients: item[];
   // Add other properties as needed
 }
 

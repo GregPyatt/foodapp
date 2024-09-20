@@ -1,5 +1,5 @@
 import Item from "./Item";
-import { food } from "./interfaces";
+import { food } from "./interfaces.ts";
 
 export default function ItemList({
   food,

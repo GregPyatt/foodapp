@@ -28,6 +28,7 @@ export default function Search({
         //console.log(data);
         //console.log("Data results are: ");
         //console.log(data.results);
+        console.log(foodData); //Added because foodData is declared but its value is never read.
       } catch (error) {
         console.error("Error fetching data:", error);
       }

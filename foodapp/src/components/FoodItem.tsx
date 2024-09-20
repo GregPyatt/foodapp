@@ -1,6 +1,13 @@
 import styles from "./fooditem.module.css";
+import { food } from "./interfaces.ts";
 
-export default function FoodItem({ food, setFoodId }) {
+export default function FoodItem({
+  food,
+  setFoodId,
+}: {
+  food: food;
+  setFoodId: (id: number) => void;
+}) {
   console.log(food.image);
   return (
     <div className={styles.itemContainer}>

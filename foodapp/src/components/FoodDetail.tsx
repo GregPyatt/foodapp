@@ -2,11 +2,11 @@ import styles from "./fooddetail.module.css";
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { food } from "./interfaces";
-import { analyzedInstruction } from "./interfaces";
-import { item } from "./interfaces";
-import { step } from "./interfaces";
+//import { analyzedInstruction } from "./interfaces";
+//import { item } from "./interfaces";
+//import { step } from "./interfaces";
 
-export default function FoodDetail({ foodId }: { foodId: string }) {
+export default function FoodDetail({ foodId }: { foodId: number }) {
   const [food, setFood] = useState({} as food);
   const [isLoading, setIsLoading] = useState(true);
   const URL = `https://api.spoonacular.com/recipes/${foodId}/information`;
